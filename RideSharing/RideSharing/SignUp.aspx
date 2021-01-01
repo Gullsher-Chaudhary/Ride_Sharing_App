@@ -9,14 +9,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
+    <link rel = "icon" href ="https://icon-library.com/images/transportation_transport_vehicles_mustang_car-512.png" type = "image/x-icon"/> 
 
     <style>
 body {
     font-family: sans-serif;
+    background: url(img/hg.jpeg) no-repeat center center/cover ;
 }
 
 :before {
-    background: url(img/hg.jpeg) no-repeat center center/cover ;
+    
     content: '';
     position: absolute;
     top: 0%;
@@ -152,14 +154,14 @@ b{
          <asp:TextBox  type="text" runat="server" placeholder="Username" id="us" required maxlength="15"></asp:TextBox>
         <asp:TextBox input type="text" runat="server" placeholder="Email" id="em" required maxlength="20"></asp:TextBox>
         <asp:TextBox input type="text" runat="server" placeholder="Gender" id="gnd" required maxlength="10"></asp:TextBox>
-        <asp:TextBox input type="tel" runat="server" placeholder="Contact No." id="Contact" required maxlength="11"></asp:TextBox>
-        <asp:TextBox input type="password" runat="server" id="pass" placeholder="Password" required minlength="8"></asp:TextBox>
+        <asp:TextBox input type="tel" runat="server" placeholder="Contact No." id="Contact" pattern="[0-9]{4}-[0-9]{7}" required maxlength="12"></asp:TextBox>
+        <asp:TextBox input type="password" runat="server" id="pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required minlength="8"></asp:TextBox>
 
             <asp:DropDownList CssClass="box" ID="DropDownList1" runat="server" >
             <asp:ListItem Text="User Type" Value="0"></asp:ListItem>
             <asp:ListItem Text="Driver" Value="Driver"></asp:ListItem>
             <asp:ListItem Text="Passenger" Value="Passenger"></asp:ListItem>
-            <asp:ListItem Text="Admin" Value="Admin"></asp:ListItem>
+           
         </asp:DropDownList>
         <asp:Button id="submit2" runat="server"  value="Login" OnClick="submitformsignup" text="SignUp"  />
         <br />

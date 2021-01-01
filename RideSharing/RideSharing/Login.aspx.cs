@@ -29,10 +29,21 @@ namespace RideSharing
 
             }
             else if (found == 1)
-            {
+            { 
                 //user exist
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Login Successfully')", true);
-
+                Session["Contact_number"] = a;
+                Session["Password"] = b;
+                Session["type"] = c;
+                if (c == "Passenger")
+                {
+                    Response.Redirect("HomePassenger.aspx");
+                    
+                }
+                else
+                {
+                    Response.Redirect("DriverHome.aspx");
+                }
             }
 
      

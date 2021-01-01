@@ -66,7 +66,7 @@ body {
 
 .box input[type='text']:focus,
 .box input[type='tel']:focus,
-.box input[type=password]:focus {
+.box input[type='password']:focus {
     width: 280px;
     border-color: #2ecc71;
     transition: 0.25s;
@@ -138,23 +138,24 @@ b{
     text-align:center;
 }
 </style>
+    <link rel = "icon" href ="https://icon-library.com/images/transportation_transport_vehicles_mustang_car-512.png" type = "image/x-icon"/> 
+
 </head>
 <body>
     <form action="" method="POST" class="box" id="form1" runat="server" >
        <h1 class="heading">Login</h1>
        
-            <asp:TextBox type="tel" placeholder="Contact No." runat="server" id="Cont" required maxlength="11"></asp:TextBox>
+            <asp:TextBox type="tel" placeholder="Contact No." runat="server" id="Cont" required maxlength="12"></asp:TextBox>
             <asp:TextBox type="password" placeholder="Password" runat="server" id="Pass" required minlength="8"></asp:TextBox>
 
              <asp:DropDownList CssClass="box" ID="DropDownList1" runat="server" >
             <asp:ListItem Text="User Type" Value="0"></asp:ListItem>
             <asp:ListItem Text="Driver" Value="Driver"></asp:ListItem>
             <asp:ListItem Text="Passenger" Value="Passenger"></asp:ListItem>
-            <asp:ListItem Text="Admin" Value="Admin"></asp:ListItem>
-        </asp:DropDownList>
+          </asp:DropDownList>
     
         <asp:Button id="submit" runat="server"  value="Login" OnClick="SubmitForm" text="submit"  />
-        <b><br><br>Create new Account ?</br></br><b>
+        <b><br/><br/>Create new Account ?<br/><br/><b>
         <a href="SignUp.aspx" target="_blank">Sign Up</a>
         </form>
     </body>

@@ -22,6 +22,10 @@ namespace RideSharing
             myDAL objmyDal = new myDAL();
             int found = 0;
             found = objmyDal.checksignup(a,b,c,d,f,g);
+
+            Session["Contact_number"] = d;
+            Session["Password"] = f;
+            Session["type"] = g;
             if (found == 0)
             {
                 //user not exist
@@ -32,7 +36,15 @@ namespace RideSharing
             {
                 //user exist
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('User Added')", true);
-
+                if(g=="Passenger")
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    Response.Redirect("DriverCarDetail.aspx");
+                }
+               
             }
             else if (found == 2)
             {

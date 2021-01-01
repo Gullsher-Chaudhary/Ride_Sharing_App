@@ -123,11 +123,20 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CustomerSupport.aspx" />
-    <Content Include="CustomerSupportJavaScript.js" />
-    <Content Include="CustomerSupportStyle.css" />
+    <Content Include="CustomerSupport.js" />
+    <Content Include="customersupportstyle.css" />
     <Content Include="Default.aspx" />
+    <Content Include="DriverCarDetail.aspx" />
+    <Content Include="DriverChangeVehicle.aspx" />
+    <Content Include="DriverEditProfile.aspx" />
+    <Content Include="DriverHistory.aspx" />
+    <Content Include="DriverHome.aspx" />
+    <Content Include="DriverRatigstyle.css" />
+    <Content Include="DriverRating.aspx" />
+    <Content Include="DriverViewRating.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GiveRating.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -138,10 +147,20 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="app.config" />
-    <Content Include="HomePassenger.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="HomePassenger.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="PassengerEditProfile.aspx" />
+    <Content Include="PassengerHistory.aspx" />
+    <Content Include="PassengerHome.css" />
+    <Content Include="DriverRatings.css" />
+    <Content Include="PostRide.aspx" />
+    <Content Include="PostRideScript.js" />
+    <Content Include="PostRideStyle.css" />
+    <Content Include="RequestRide.aspx" />
+    <Content Include="RequestRideScript.js" />
+    <Content Include="RequestRideStyle.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -207,6 +226,62 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DriverCarDetail.aspx.cs">
+      <DependentUpon>DriverCarDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverCarDetail.aspx.designer.cs">
+      <DependentUpon>DriverCarDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DriverChangeVehicle.aspx.cs">
+      <DependentUpon>DriverChangeVehicle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverChangeVehicle.aspx.designer.cs">
+      <DependentUpon>DriverChangeVehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DriverEditProfile.aspx.cs">
+      <DependentUpon>DriverEditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverEditProfile.aspx.designer.cs">
+      <DependentUpon>DriverEditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DriverHistory.aspx.cs">
+      <DependentUpon>DriverHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverHistory.aspx.designer.cs">
+      <DependentUpon>DriverHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DriverHome.aspx.cs">
+      <DependentUpon>DriverHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverHome.aspx.designer.cs">
+      <DependentUpon>DriverHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DriverRating.aspx.cs">
+      <DependentUpon>DriverRating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverRating.aspx.designer.cs">
+      <DependentUpon>DriverRating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DriverViewRating.aspx.cs">
+      <DependentUpon>DriverViewRating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DriverViewRating.aspx.designer.cs">
+      <DependentUpon>DriverViewRating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GiveRating.aspx.cs">
+      <DependentUpon>GiveRating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiveRating.aspx.designer.cs">
+      <DependentUpon>GiveRating.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -231,7 +306,35 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="PassengerEditProfile.aspx.cs">
+      <DependentUpon>PassengerEditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PassengerEditProfile.aspx.designer.cs">
+      <DependentUpon>PassengerEditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PassengerHistory.aspx.cs">
+      <DependentUpon>PassengerHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PassengerHistory.aspx.designer.cs">
+      <DependentUpon>PassengerHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostRide.aspx.cs">
+      <DependentUpon>PostRide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostRide.aspx.designer.cs">
+      <DependentUpon>PostRide.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestRide.aspx.cs">
+      <DependentUpon>RequestRide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestRide.aspx.designer.cs">
+      <DependentUpon>RequestRide.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

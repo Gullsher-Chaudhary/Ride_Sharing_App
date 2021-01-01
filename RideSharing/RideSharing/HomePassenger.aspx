@@ -4,121 +4,242 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Passenger Home</title>
-</head>
+     <meta charset="utf-8" />
+    <title>PassengerHomePage</title>
+        <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+     <link rel = "icon" href ="https://icon-library.com/images/transportation_transport_vehicles_mustang_car-512.png" type = "image/x-icon"/> 
+
+    <!--CSS start for sidebar and layout-->
     <style>
-        :before {
-    background: url(img/hg.jpeg) no-repeat center center/cover;
-    content: '';
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.5;
-    
-}
-*{
-    scroll-behavior: smooth;
-    margin: 0px;
-    padding: 0px;
-}
+        body{
+            font-family: 'Times New Roman', sans-serif;
+            background: url(img/hg.jpeg) no-repeat center center/cover;
+        }
+       
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .sidebar{
+            position: fixed;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #042331;
+            transition: all .5s ease;
+        }
+        .sidebar header{
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            line-height: 70px;
+            background: #063146;
+            user-select: none;
+        }
+        .sidebar ul a{
+            display: block;
+            height: 100%;
+            width: 100%;
+            line-height: 65px;
+            font-size: 20px;
+            color: white;
+            padding-left: 40px;
+            box-sizing:border-box;
+            border-top: 1px solid rgba(255,255,255,.1);
+            border-bottom: 1px solid black;
+            transition: .4s;
+        }
+        ul li:hover a{
+            padding-left: 50px;
+        }
+        .sidebar ul a i{
+            margin-right: 16px;
+        }
+        #check{
+            display: none;
+        }
+        label #btn, label #cancel{
+            position: absolute;
+            cursor: pointer;
+            background: #808080;
+            border-radius: 2px;
+        }
+        label #btn{
+            left: 40px;
+            top: 25px;
+            font-size: 35px;
+            color: white;
+            padding: 3px 4px;
+            transition: all .5s;
+        }
+        label #cancel{
+            z-index: 1111;
+            left: -205px;
+            top: 17px;
+            font-size: 20px;
+            color: #0a5275;
+            padding: 1px 1px;
+            transition: all .5s ease;
+        }
+        #check:checked ~ .sidebar{
+            left: 0;
+        }
+        #check:checked ~ label #btn{
+            left: 250px;
+            opacity: 0;
+            pointer-events: none;
+        }
+        #check:checked ~ label #cancel{
+            left: 205px;
+        }
 
+        #check:checked ~ section{
+            margin-left:250px;
+        }
+        section
+        {
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            transition: all .5s;
+        }
+        section header{
+            font-size: 22px;
+            color: white;
+            text-align:start;
+            padding-left: 100px;
+            line-height: 70px;
+            background: #063146;
+            user-select: none;
+            width: 100%;
+            height: 70px;
+        }
+        section header span{
+            color: aqua;
+        }
+        section ul a{
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+        section .right_area{
+            padding: 5px;
+            background: #19B3D3;
+            text-decoration: none;
+            float: right;
+            margin-top: -30px;
+            margin-right: 40px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        section .right_area span{
+            color: #fff;
+        }
+        section .Box{
+            font-size:25px;
+            text-decoration-color:white;
+            color:white;
+            margin-top: 50px;
+            overflow: hidden;
+        }
+    </style>
+    <!--CSS End for sidebar and layout-->
 
-
-.navbar{
-    background-color: black;
-    height: 85px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.name{
-    display: block;
-    float: left;
-}
-
-.name ul{
-    display: flex;
-}
-
-.name ul li {
-    font-size: 46px;
-    list-style: none;
-    position: absolute;
-    top: 2%;
-    left: 6%;
-    padding: 10px 0px;
-
-}
-
-.name ul li a{
-    color: crimson;
-    text-decoration: none;
-    font-family: 'Righteous',cursive;
-}
-
-.nav-menu{
-    display: block;
-
-}
-
-.nav-menu ul {
-    display: flex;
-    float: right;
-    top: 10%;
-}
-
-.nav-menu ul li{
-    display: block;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 40px 5px;
-
-
-
-}
-
-.nav-menu ul li a{
-    color: white;
-    /* font-family: 'Piazzolla', serif; */
-    font-family: 'Commissioner', sans-serif;
-
-    text-decoration: none;
-
-}
-
-
-.nav-menu ul li a:hover{
-    color: crimson;
-}
-
-
-        </style>
+</head>
+ 
 <body>
     <form id="form1" runat="server">
-            <nav id="home" class="navbar">  
-        <div class="name">
-            <ul>
-                <li><a href="">Ride Sharing</a></li>
-            </ul>
-        </div>
-        <div class="nav-menu">
-            <ul>
-                <li><a href="#Request">Request Ride</a></li>
-                <li><a href="#profile">Edite profile</a></li>
-                <li><a href="#history">History</a></li>
-                <li><a href="#driver following">Driver Following</a></li>
-                <li><a href="#delete Account">Delete Account</a></li>
-                <li><a href="#support">Customer Support</a></li>
-                <li><a href="#log out">Logout</a></li>
-            </ul>
-        </div>
-             
+        
+        
+        <!-- START: create cross(cancel and menu botton on  the sidebar and out of the sidebar-->
+        <input type="checkbox" id="check" />
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <!-- END: create cross(cancel and menu botton on  the sidebar and out of the sidebar-->
 
+        <!--sidebar start-->
+        <div class="sidebar">
+            <header>
+                <div class="text" >UserName and PIC</div>
+            </header>
+            <ul>
+                <li>
+                    <a href="HomePassenger.aspx">
+                        <i class="fas fa-home"></i><span> Home</span> 
+                    </a>
+                </li>
+                
+
+                <li>
+                    <a href="PassengerEditProfile.aspx">
+                        <i class="fas fa-edit"></i> Edit Profile 
+                    </a>
+                </li>
+                <li>
+                    <a href="RequestRide.aspx">
+                        <i class="fas fa-person-booth"></i> Request Ride
+                    </a>
+                </li>
+                 <li>
+                        <a href="DriverRating.aspx">
+                            <i class="fas fa-star"></i> Give Ratings
+                        </a>
+                  </li>
+                
+                <li>
+                    <a href="PassengerHistory.aspx">
+                        <i class="fas fa-history"></i> History 
+                    </a>
+                </li>
+                <li>
+                    <a href="CustomerSupport.aspx">
+                        <i class="far fa-question-circle"></i> Custumer Support 
+                    
+                    </a>
+                </li>
+                <li>
+                    <a href="Login.aspx">
+                        <i class="fas fa-power-off"></i> Logout 
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- sidebar end-->
+
+        <!-- START: BackGround Image -->
+        <section>
+
+            <!--image path is given in css part of that class-->
+            <header>
+                <div class="text" >Ride <span>Sharing </span>|<span> Home</span></div>
+            </header>
+
+            <!-- START: left side menu of logout -->
+            <div class="right_area">
+                <a href="Login.aspx" class="fas fa-power-off"></><span> Logout</span>
+                </a>
+            </div>
+            <!-- END: left side menu of logout -->
+            <center>
+
+                <br/> <br/> 
+                <h1 class= "Box">Personal Information</h1>
+                
+            <div class= "Box">
+                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            </div>
+        </center>
+            
+        </section>
+        <!-- END: BackGround Image-->
+        
+           
     </form>
 </body>
 </html>
